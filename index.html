@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meow Facts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="col-md-8 mx-auto bg">
+        <h1 class="title">STATUS CODE VADIVELU GIF</h1>
+        <div class="col-md-5 mx-auto inner-layer">
+            <label>CHOOSE THE HTTP STATUS CODE</label><br />
+            <input type="number" id="num" placeholder="Enter a Http Ststus code(eg:200)" /><br />
+            <button onclick="fetchAndDisplayGIF()" class="click-btn">
+                CLICK SEE TO GIF
+            </button>
+            <div id="gifContainer" class="mt-4"></div>
+        </div>
+    </div>
+    <script>
+        async function fetchAndDisplayGIF() {
+            try {
+                var inputElement = document.getElementById("num").value;
+                var value = parseInt(inputElement);
+                const response = await fetch(`https://vadivelu.anoram.com/gif/${value}`);
+                const gifUrl = await response.url;
+
+                const gifContainer = document.getElementById('gifContainer');
+                gifContainer.innerHTML = ''; // Clear previous content
+
+                const gifElement = document.createElement('img');
+                gifElement.src = gifUrl;
+                gifElement.alt = 'Random GIF';
+
+                gifContainer.appendChild(gifElement);
+            } catch (error) {
+                console.error('Error fetching or displaying GIF:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>

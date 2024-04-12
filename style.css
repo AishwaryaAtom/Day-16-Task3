@@ -1,0 +1,33 @@
+.click-btn{
+  background-image: linear-gradient(135deg, #ff9800, #ff5722);
+
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+.click-btn:hover {
+    /* Change Background on Hover */
+   
+  background-image: linear-gradient(135deg, #f44336, #e91e63);
+  }
+.title{
+    text-align: center;
+}
+.inner-layer{
+    text-align: center;
+}
+input{
+    border-radius: 5px;
+    width:100%;
+}
+.bg{
+    background-image: linear-gradient(45deg, #ffeb3b, #f44336, #9c27b0, #3f51b5);
+    min-height: 100vh;
+}
